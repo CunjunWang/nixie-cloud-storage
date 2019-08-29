@@ -5,8 +5,13 @@ import (
 	"io"
 	"io/ioutil"
 	"net/http"
+	"nixie-cloud-storage/meta"
+	"nixie-cloud-storage/util"
 	"os"
+	"time"
 )
+
+const uploadPath = "/tmp/"
 
 // UploadHandler: 处理文件上传
 // w: 用于输出, r: 输入指针
@@ -29,8 +34,17 @@ func UploadHandler(w http.ResponseWriter, r *http.Request) {
 		// 在函数退出之前把file流关掉
 		defer file.Close()
 
+		var fileLocation = uploadPath + header.Filename;
+
+		// 存储元信息
+		fileMeta := meta.FileMeta{
+			FileName: header.Filename,
+			Location: fileLocation,
+			UploadAt: time.Now().Format("2006-01-02 15:04:05"),
+		}
+
 		// 创建本地文件
-		newFile, err := os.Create("/tmp/" + header.Filename)
+		newFile, err := os.Create(fileMeta.Location)
 		if err != nil {
 			fmt.Printf("Failed to create local file, err: %s", err.Error())
 			return
@@ -38,11 +52,18 @@ func UploadHandler(w http.ResponseWriter, r *http.Request) {
 		defer newFile.Close()
 
 		// 把上传的文件流拷贝写入创建的本地文件
-		_, err = io.Copy(newFile, file)
+		fileMeta.FileSize, err = io.Copy(newFile, file)
 		if err != nil {
 			fmt.Printf("Failed to write data to local file, err: %s", err.Error())
 			return
 		}
+
+		// 计算文件SHA1值
+		newFile.Seek(0, 0) // 移动文件句柄到文件头部, 来获取整个文件的SHA1值
+		fileMeta.FileSha1 = util.FileSha1(newFile)
+
+		// 把文件元信息存储下来
+		meta.UpdateFileMeta(fileMeta)
 
 		http.Redirect(w, r, "/file/upload/success", http.StatusFound)
 	}

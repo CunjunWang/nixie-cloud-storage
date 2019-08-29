@@ -2,32 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="674f109f-8ddf-4311-bf2d-b6dbbb286284" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/view/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meta/filemeta.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util/util.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handler/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handler/handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/fileinput.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/avatar.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/FileSaver.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/StreamSaver.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/auth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/fileinput.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/jquery-3.2.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/layui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/piexif.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/polyfill.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/popper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/purify.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/sortable.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/sw.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/theme.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/view/download.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/view/home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/view/signin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/view/signup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/view/upload.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="255">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="e#14#74#0" expanded="true" />
               </folding>
@@ -49,11 +27,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/handler/handler.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+            <state relative-caret-position="421">
+              <caret line="41" column="46" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
+              <folding>
+                <element signature="e#17#71#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/meta/filemeta.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/util/util.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+              <folding>
+                <element signature="e#63#96#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,8 +65,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Go File" />
         <option value="HTML File" />
+        <option value="Go File" />
       </list>
     </option>
   </component>
@@ -88,14 +90,16 @@
         <option value="$PROJECT_DIR$/static/view/upload.html" />
         <option value="$PROJECT_DIR$/handler/test.go" />
         <option value="$PROJECT_DIR$/static/view/index.html" />
+        <option value="$PROJECT_DIR$/util/util.go" />
+        <option value="$PROJECT_DIR$/meta/filemeta.go" />
         <option value="$PROJECT_DIR$/handler/handler.go" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="803" />
+    <option name="x" value="782" />
     <option name="y" value="23" />
-    <option name="width" value="877" />
+    <option name="width" value="898" />
     <option name="height" value="963" />
   </component>
   <component name="ProjectView">
@@ -113,7 +117,7 @@
             <path>
               <item name="nixie-cloud-storage" type="b2602c69:ProjectViewProjectNode" />
               <item name="nixie-cloud-storage" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -172,10 +176,10 @@
     </recent_temporary>
   </component>
   <component name="ToolWindowManager">
-    <frame x="803" y="23" width="877" height="963" extended-state="0" />
+    <frame x="782" y="23" width="898" height="963" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17724551" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17289719" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -188,7 +192,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3278302" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3278302" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -243,19 +247,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handler/handler.go">
+    <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#14#74#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
+    <entry file="file://$PROJECT_DIR$/util/util.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="45">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
           <folding>
-            <element signature="e#14#74#0" expanded="true" />
+            <element signature="e#63#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meta/filemeta.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handler/handler.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="41" column="46" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
+          <folding>
+            <element signature="e#17#71#0" expanded="true" />
           </folding>
         </state>
       </provider>
