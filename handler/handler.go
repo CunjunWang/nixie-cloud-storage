@@ -13,7 +13,7 @@ import (
 func UploadHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
 		// 返回上传html页面
-		data, err := ioutil.ReadFile("./static/view/upload.html")
+		data, err := ioutil.ReadFile("./static/view/index.html")
 		if err != nil {
 			io.WriteString(w, "internal server error")
 			return
@@ -30,7 +30,7 @@ func UploadHandler(w http.ResponseWriter, r *http.Request) {
 		defer file.Close()
 
 		// 创建本地文件
-		newFile, err := os.Create("./upload/" + header.Filename)
+		newFile, err := os.Create("/tmp/" + header.Filename)
 		if err != nil {
 			fmt.Printf("Failed to create local file, err: %s", err.Error())
 			return
