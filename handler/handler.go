@@ -128,3 +128,51 @@ func DownloadHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Disposition", "attachment;filename=\""+fm.FileName+"\"")
 	w.Write(data)
 }
+
+// FileMetaUpdateHandler: 文件元信息更新(重命名)
+func FileMetaUpdateHandler(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+
+	opType := r.Form.Get("op")
+	fileSha1 := r.Form.Get("filehash")
+	newFileName := r.Form.Get("filename")
+
+	if opType != "0" {
+		w.WriteHeader(http.StatusForbidden) // 403
+		return
+	}
+
+	if r.Method != "POST" {
+		w.WriteHeader(http.StatusMethodNotAllowed) // 405
+		return
+	}
+
+	curFileMeta := meta.GetFileMeta(fileSha1)
+	curFileMeta.FileName = newFileName
+	meta.UpdateFileMeta(curFileMeta)
+
+	data, err := json.Marshal(curFileMeta)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError) // 500
+		return
+	}
+	w.WriteHeader(http.StatusOK) // 200
+	w.Write(data)
+}
+
+// FileDeleteHandler: 文件删除
+func FileDeleteHandler(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+
+	// 删除索引
+	fileSha1 := r.Form.Get("filehash")
+	meta.RemoveFileMeta(fileSha1)
+
+	// 删除文件
+	fMeta := meta.GetFileMeta(fileSha1)
+	// TODO: 此处删除文件可能失败, 后期再处理
+	os.Remove(fMeta.Location)
+	meta.RemoveFileMeta(fileSha1)
+
+	w.WriteHeader(http.StatusOK) // 200
+}
