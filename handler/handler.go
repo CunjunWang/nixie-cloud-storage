@@ -9,6 +9,7 @@ import (
 	"nixie-cloud-storage/meta"
 	"nixie-cloud-storage/util"
 	"os"
+	"strconv"
 	"time"
 )
 
@@ -77,11 +78,26 @@ func UploadSuccessHandler(w http.ResponseWriter, r *http.Request) {
 
 // GetFileMetaHandler: 获取文件元信息
 func GetFileMetaHandler(w http.ResponseWriter, r *http.Request) {
+	// 解析请求参数
 	r.ParseForm()
 
 	filehash := r.Form["filehash"][0]
 	fileMeta := meta.GetFileMeta(filehash)
 	data, err := json.Marshal(fileMeta)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+	w.Write(data)
+}
+
+// FileQueryHandler: 批量查询文件元信息
+func FileQueryHandler(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+
+	limitCnt, _ := strconv.Atoi(r.Form.Get("limit"))
+	fileMetas := meta.GetLastFileMetas(limitCnt)
+	data, err := json.Marshal(fileMetas)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		return
